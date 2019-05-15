@@ -66,10 +66,10 @@ Think about the type of work you would like to do at Grover and **choose an app
 Please answer the following questions in the markdown file called `FOLLOW-UP.md`.
 Is it ok if you don't know the answer for some of the questions.
 
-1. How long did you spend on the coding test? What would you add to your solution if you had more time? **If you didn't spend much time on the coding test then use this as an opportunity to explain what you would add.**
+1. How long did you spend on the coding test? What would you add to your solution if you had more time? *If you didn't spend much time on the coding test then use this as an opportunity to explain what you would add.*
 2. What was the most useful feature added to the latest version of your chosen language? Please include a snippet of code that shows how you've used it.
 3. How would you track down a performance issue in production? Have you ever had to do this?
 4. How would you monitor and trace issues in a distributed systems environment?
 
 #### Thanks for your time, we look forward to hearing from you!
-**Inspiration for the test format taken with ❤️ from [Skyscanner recruitment test](https://github.com/Skyscanner/full-stack-recruitment-test/) & [JustEat's recruitment test](https://github.com/justeat/JustEat.RecruitmentTest)**
+*Inspiration for the test format taken with ❤️ from [Skyscanner recruitment test](https://github.com/Skyscanner/full-stack-recruitment-test/) & [JustEat's recruitment test](https://github.com/justeat/JustEat.RecruitmentTest)*
