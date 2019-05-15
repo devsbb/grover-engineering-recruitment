@@ -1,7 +1,7 @@
 Grover Engineering Recruitment Test
 ==================================
 
-Thank you for taking the time to do our technical test. It consists of two parts:
+Thank you for taking the time to do our technical test. Basically, it consists of two parts:
 
 * [A coding test](#coding-test)
 * [A few technical questions](#technical-questions)
@@ -14,10 +14,10 @@ Please, submit your results by sending a ZIP file to your Grover contact person 
 ## Context
 Grover is a fresh alternative to the traditional product ownership model for consumers, providing a highly flexible monthly subscription service for everyday devices such as laptops, smartphones, tablets, digital cameras, and more!
 
-We proudly announced recently that consumers can now rent tech in every MediaMarkt store in Germany: 200+ locations, from Flensburg to Friedrichshafen, meaning, they can simply visit any of these stores, rent with Grover and walk away with tech in hand.
+We announced recently that consumers can now rent tech in every MediaMarkt store in Germany: 200+ locations, from Flensburg to Friedrichshafen, meaning, they can simply visit any of these stores, rent with Grover and walk away with tech in hand.
 
 ## Coding Test
-The task is to create an application to show the consumer the products available in a given store. Remember that each store could have a different portfolio of products available and different stock levels for the same product.
+The task is to create an application to show the consumer the products available in a given store. Remember that each store could have a different portfolio of products and different stock levels for the same product.
 
 Basically, when querying the API the application should return a list of products containing:
 - Name
@@ -44,18 +44,14 @@ As a **consumer in store running the application**
 I can **chose to see unavailable products in this store**  
 So that **I can subscribe for waiting list**
 
-As a **consumer in store running the application**  
-I can **chose to see unavailable products in this store**  
-So that **I can subscribe for waiting list**
-
 #### Acceptance criteria
-- For the known store codes `grover-de` and `mm-berlin`, product results are returned based on the availability filter
-- Available products are shown by default if no filter chosen
-- Grover Germany (store code `grover-de`) is shown by default if no store passed
+- For the known store codes `grover-de` and `mm-berlin`, products are returned based on the availability filter
+- Available products are shown by default, if no filter chosen
+- Grover Germany (`grover-de`) is shown by default, if no store code passed
 - The product Name, Brand, Category, Availability (in stock | out of stock) and quantity are displayed
 
 ### Platform Choice
-You can create the application as either a command line application, web application or mobile application in any of the following platforms
+You can create the application as either a command line application or web application in any of the following platforms:
 
 - Python, Typescript, NodeJS, Ruby or JavaScript for web applications
 - Python, Ruby, Golang or Rust for command line applications
@@ -64,7 +60,7 @@ Think about the type of work you would like to do at Grover and **choose an app
 
 # Technical questions
 Please answer the following questions in the markdown file called `FOLLOW-UP.md`.
-Is it ok if you don't know the answer for some of the questions.
+It is ok if you don't know the answer for some of the questions, therefore don't copy/paste from Google.
 
 1. How long did you spend on the coding test? What would you add to your solution if you had more time? *If you didn't spend much time on the coding test then use this as an opportunity to explain what you would add.*
 2. What was the most useful feature added to the latest version of your chosen language? Please include a snippet of code that shows how you've used it.
