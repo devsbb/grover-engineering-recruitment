@@ -1,0 +1,74 @@
+version: "3.8"
+x-faust-data-processing-common:
+  environment:
+    &common-env
+    KAFKA_BROKER_URL: kafka://kafka:29092
+    KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+    ENVIRONMENT: dev
+
+services:
+  builder:
+    build: .
+    image: faust-data-processing
+
+  consumers:
+    tty: true
+    image: faust-data-processing
+    container_name: faust-data-processing-consumers
+    command: bash -c "python wait_for_service.py kafka 29092 && faust -A consumers.main:app worker -l info"
+    restart: always
+    depends_on:
+      - kafka
+    environment:
+      <<: *common-env
+    ports:
+      - "6066:6066"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6066"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  producers:
+    tty: true
+    image: faust-data-processing
+    container_name: faust-data-processing-producers
+    command: bash -c "python wait_for_service.py kafka 29092 && python producers/main.py"
+    restart: always
+    depends_on:
+      - kafka
+    environment:
+      <<: *common-env
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:6066" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  kafka:
+    image: vectorized/redpanda:v21.11.8
+    container_name: faust-kafka
+    ports:
+      - 9092:9092
+      - 29092:29092
+      - 8081:8081
+      - 8082:8082
+    restart: always
+    command:
+      - redpanda
+      - start
+      - --smp
+      - '1'
+      - --reserve-memory
+      - 0M
+      - --overprovisioned
+      - --node-id
+      - '0'
+      - --kafka-addr
+      - PLAINTEXT://0.0.0.0:29092,OUTSIDE://0.0.0.0:9092
+      - --advertise-kafka-addr
+      - PLAINTEXT://kafka:29092,OUTSIDE://localhost:9092
+      - --pandaproxy-addr
+      - 0.0.0.0:8082
+      - --advertise-pandaproxy-addr
+      - 127.0.0.1:8082
