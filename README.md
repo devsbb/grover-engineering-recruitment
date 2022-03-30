@@ -1,8 +1,5 @@
 # Grover Engineering
 
-If you want to participate on the hiring process please sign up in this spreadsheet
-[Hiring Process Sign Up](https://docs.google.com/spreadsheets/d/1hNMujeMNLtF1-e0np90cpJ3Lwt8w4ojZjma8CHzMmvQ/edit?usp=sharing)
-
 # Grover Engineering Recruitment Test
 
 Thank you for taking the time to do our technical test. Basically, it consists of two parts:
